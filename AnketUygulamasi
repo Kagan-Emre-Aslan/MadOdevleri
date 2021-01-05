@@ -1,0 +1,580 @@
+activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/lightblue">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="159dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="146dp"
+        android:text="Sırdaki Soru" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="61dp"
+        android:text="Hangi Tür Müzik Dinlersiniz?"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="202dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="481dp"
+        android:buttonTint="#000000"
+        android:textStyle="bold"
+        android:text="ROCK" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="315dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="368dp"
+        android:buttonTint="#000000"
+        android:textStyle="bold"
+        android:text="POP" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="425dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="258dp"
+        android:buttonTint="#000000"
+        android:textStyle="bold"
+        android:text="RAP" />
+
+</RelativeLayout>
+MainActivity.java
+package com.example.cbrbodev;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+private Button button;
+private CheckBox checkBox,checkBox2,checkBox3;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        button = findViewById(R.id.button);
+        checkBox = findViewById(R.id.checkBox);
+        checkBox2 = findViewById(R.id.checkBox2);
+        checkBox3 = findViewById(R.id.checkBox3);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gecisyap = new Intent(MainActivity.this,MainActivity2.class);
+                startActivity(gecisyap);
+                finish();
+            }
+        });
+    }
+}
+
+activity_main2.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/lightblue">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="159dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="146dp"
+        android:text="Sırdaki Soru" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="301dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="54dp"
+        android:text="Hangi Mevsimi Tercih Edersiniz?"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="499dp"
+        android:buttonTint="#000000"
+        android:text="İLKBAHAR"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="259dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="424dp"
+        android:buttonTint="#000000"
+        android:text="YAZ"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox6"
+        android:layout_width="108dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="329dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="344dp"
+        android:buttonTint="#000000"
+        android:text="SONBAHAR"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="414dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="269dp"
+        android:buttonTint="#000000"
+        android:textStyle="bold"
+        android:text="KIŞ" />
+
+</RelativeLayout>
+MainActivity2.java
+package com.example.cbrbodev;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+
+public class MainActivity2 extends AppCompatActivity {
+private Button button2;
+private CheckBox checkBox4,checkBox5,checkBox6,checkBox7;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+
+        button2 = findViewById(R.id.button2);
+        checkBox4 = findViewById(R.id.checkBox4);
+        checkBox5 = findViewById(R.id.checkBox5);
+        checkBox6 = findViewById(R.id.checkBox6);
+        checkBox7 = findViewById(R.id.checkBox7);
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gecisyap2 = new Intent(MainActivity2.this,MainActivity3.class);
+                startActivity(gecisyap2);
+                finish();
+            }
+        });
+    }
+}
+
+activity_main3.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/lightblue">
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="159dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="146dp"
+        android:text="Sırdaki Soru" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="73dp"
+        android:text="Hangi Uygulamaları Kullanıyorsunuz?"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="202dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="481dp"
+        android:buttonTint="#000000"
+        android:textStyle="bold"
+        android:text="TWİTTER" />
+
+    <CheckBox
+        android:id="@+id/checkBox9"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="314dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="369dp"
+        android:buttonTint="#000000"
+        android:text="FACEBOOK"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/checkBox10"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="425dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="258dp"
+        android:buttonTint="#000000"
+        android:text="İNSTAGRAM"
+        android:textStyle="bold" />
+
+</RelativeLayout>
+MainActivity3.java
+package com.example.cbrbodev;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+
+public class MainActivity3 extends AppCompatActivity {
+private Button button3;
+private CheckBox checkBox8,checkBox9,checkBox10;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main3);
+
+        button3 = findViewById(R.id.button3);
+        checkBox8 = findViewById(R.id.checkBox8);
+        checkBox9 = findViewById(R.id.checkBox9);
+        checkBox10 = findViewById(R.id.checkBox10);
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gecisyap3 = new Intent(MainActivity3.this,MainActivity4.class);
+                startActivity(gecisyap3);
+                finish();
+            }
+        });
+    }
+}
+
+activity_main4.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/lightblue">
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="159dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="146dp"
+        android:text="Sırdaki Soru" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="73dp"
+        android:text="Hangisini Tercih Ederdiniz?"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="202dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="481dp"
+        android:buttonTint="#000000"
+        android:textStyle="bold"
+        android:text="ÇAY" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="314dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="369dp"
+        android:buttonTint="#000000"
+        android:text="KAHVE"
+        android:textStyle="bold" />
+
+</RelativeLayout>
+MainActivity4.java
+package com.example.cbrbodev;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+
+public class MainActivity4 extends AppCompatActivity {
+private Button button4;
+private RadioButton radioButton,radioButton2,radioButton3;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main4);
+
+        button4 = findViewById(R.id.button4);
+        radioButton = findViewById(R.id.radioButton);
+        radioButton2 = findViewById(R.id.radioButton2);
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gecisyap4 = new Intent(MainActivity4.this,MainActivity5.class);
+                startActivity(gecisyap4);
+                finish();
+            }
+        });
+    }
+}
+
+activity_main5.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/lightblue">
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="159dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="146dp"
+        android:text="Sırdaki Soru" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="73dp"
+        android:text="Hangi Telefon Markasını Kullanıyorsunuz?"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <RadioButton
+        android:id="@+id/radioButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="202dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="481dp"
+        android:buttonTint="#000000"
+        android:textStyle="bold"
+        android:text="APPLE" />
+
+    <RadioButton
+        android:id="@+id/radioButton5"
+        android:layout_width="109dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="314dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="369dp"
+        android:buttonTint="#000000"
+        android:text="SAMSUNG"
+        android:textStyle="bold" />
+
+    <RadioButton
+        android:id="@+id/radioButton6"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="425dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="258dp"
+        android:buttonTint="#000000"
+        android:text="XIAOMI"
+        android:textStyle="bold" />
+
+</RelativeLayout>
+MainActivity5.java
+package com.example.cbrbodev;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.Toast;
+
+public class MainActivity5 extends AppCompatActivity {
+private Button button5;
+private RadioButton radioButton4,radioButton5,radioButton6;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main5);
+
+        button5 = findViewById(R.id.button5);
+        radioButton4 = findViewById(R.id.radioButton4);
+        radioButton5 = findViewById(R.id.radioButton5);
+        radioButton6 = findViewById(R.id.radioButton6);
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity5.this, "YANITLARINIZ GÖNDERİLDİ", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+    }
+}
